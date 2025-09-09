@@ -1,0 +1,151 @@
+
+@import "tailwindcss";
+
+
+@layer base {
+  :root {
+    --background: 222 15% 95%;
+    --foreground: 222 15% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 15% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 15% 20%;
+    --primary: 220 90% 56%;
+    --primary-foreground: 210 15% 98%;
+    --secondary: 210 25% 87%;
+    --secondary-foreground: 222 15% 35%;
+    --muted: 210 25% 90%;
+    --muted-foreground: 222 10% 50%;
+    --accent: 340 80% 65%;
+    --accent-foreground: 340 70% 18%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 80%;
+    --input: 210 25% 90%;
+    --ring: 220 90% 60%;
+    --chart-1: 210 90% 60%;
+    --chart-2: 180 90% 50%;
+    --chart-3: 160 90% 45%;
+    --chart-4: 140 90% 40%;
+    --chart-5: 120 90% 45%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 15% 12%;
+    --foreground: 222 15% 95%;
+    --card: 222 15% 15%;
+    --card-foreground: 222 15% 95%;
+    --popover: 222 15% 15%;
+    --popover-foreground: 222 15% 95%;
+    --primary: 210 70% 60%;
+    --primary-foreground: 210 15% 10%;
+    --secondary: 210 15% 30%;
+    --secondary-foreground: 222 15% 98%;
+    --muted: 210 15% 30%;
+    --muted-foreground: 222 15% 80%;
+    --accent: 340 75% 70%;
+    --accent-foreground: 340 75% 90%;
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 222 15% 40%;
+    --input: 222 15% 40%;
+    --ring: 220 90% 85%;
+    --chart-1: 210 90% 60%;
+    --chart-2: 180 90% 50%;
+    --chart-3: 160 90% 45%;
+    --chart-4: 140 90% 40%;
+    --chart-5: 120 90% 45%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+}
+
+
+.gradient-text {
+  background: linear-gradient(90deg, #60a5fa, #34d399, #60a5fa);
+  background-size: 200% auto;
+  animation: gradient-shift 4s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-border {
+  position: relative;
+  background: linear-gradient(45deg, #60a5fa, #34d399);
+  padding: 2px;
+  border-radius: var(--radius);
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(45deg, #60a5fa, #34d399);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.typing-effect::after {
+  content: "|";
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+  color: var(--primary);
+}
+
+pre[class*="language-"] {
+  background: #091121 !important;
+  padding: 1.5rem !important;
+  margin: 0 !important;
+  font-size: 0.95rem !important;
+  border-radius: var(--radius);
+}
+
+.token.comment {
+  color: #8b9cb3 !important;
+  font-style: italic;
+}
+
+.token.string {
+  color: #a5d6ff !important;
+}
+
+.token.keyword {
+  color: #ff79c6 !important;
+}
+
+.token.function {
+  color: #66e7ff !important;
+}
+
+.border-container {
+  border-width: 1px;
+  border-style: solid;
+  border-color: hsl(var(--border));
+  border-radius: var(--radius);
+  padding: 1rem; 
+}
+
